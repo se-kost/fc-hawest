@@ -1,0 +1,33 @@
+uuid: 4e468072-572c-451f-881b-4c3ec5600c7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_position
+field_name: field_position
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: GK
+      label: Goalkeeper
+    -
+      value: DF
+      label: Defender
+    -
+      value: MD
+      label: Midfielder
+    -
+      value: FW
+      label: Forward
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
