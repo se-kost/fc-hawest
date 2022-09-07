@@ -1,0 +1,43 @@
+.paragraph--type--action {
+  .button {
+    border: 1px solid var(--primary-color);
+    width: max-content;
+    padding: 10px;
+    background: var(--white);
+    transition: linear .2s;
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: var(--primary-color);
+      a {
+        color: var(--white);
+      }
+    }
+  }
+
+  .link {
+    padding: 10px;
+    border-left: 1px solid var(--white);
+    background: linear-gradient(to left, transparent 50%, var(--white) 50%) right;
+    background-size: 200% 100%;
+    transition: linear .2s;
+    width: max-content;
+
+    a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-position: left;
+
+      a {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

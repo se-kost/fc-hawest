@@ -46,27 +46,18 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
+{#{% set background_image = content.field_background_image[0]['#media'].field_background_image.entity.uri.value %}#}
+{#{% set background_image = content.field_background_image.entity.field_media_image.entity.fileuri %}#}
+{% set background_image = content.field_background_image[0]['#media'].field_media_image.entity.uri.value %}
+{#{{ dd(background_image) }}#}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% if instagram %}
-      <div class="social-icon player-instagram">
-        <a href="https://www.instagram.com/{{ instagram }}" target="_blank">Instagram</a>
+    <div class="banner-wrapper" style="background-image: url({{ file_url(background_image) }})">
+      <div class="banner-content">
+        <h2>{{ content.field_title }}</h2>
+        <div class="banner-description">{{ content.field_description }}</div>
+        <div class="banner-actions">{{ content.field_action }}</div>
       </div>
-    {% endif %}
-    {% if facebook %}
-      <div class="social-icon player-facebook">
-        <a href="{{ facebook }}" target="_blank">Facebook</a>
-      </div>
-    {% endif %}
-    {% if telegram %}
-      <div class="social-icon player-telegram">
-        <a href="https://t.me/{{ telegram }}" target="_blank">Telegram</a>
-      </div>
-    {% endif %}
-    {% if phone %}
-      <div class="social-icon player-phone">
-        <a href="tel:{{ phone }}">Phone</a>
-      </div>
-    {% endif %}
+    </div>
   </div>
 {% endblock paragraph %}

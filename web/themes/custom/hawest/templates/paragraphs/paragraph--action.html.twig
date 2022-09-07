@@ -46,27 +46,11 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
+{% set link_type = content.field_link_type.0 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% if instagram %}
-      <div class="social-icon player-instagram">
-        <a href="https://www.instagram.com/{{ instagram }}" target="_blank">Instagram</a>
-      </div>
-    {% endif %}
-    {% if facebook %}
-      <div class="social-icon player-facebook">
-        <a href="{{ facebook }}" target="_blank">Facebook</a>
-      </div>
-    {% endif %}
-    {% if telegram %}
-      <div class="social-icon player-telegram">
-        <a href="https://t.me/{{ telegram }}" target="_blank">Telegram</a>
-      </div>
-    {% endif %}
-    {% if phone %}
-      <div class="social-icon player-phone">
-        <a href="tel:{{ phone }}">Phone</a>
-      </div>
-    {% endif %}
+    <div class="{{ link_type }}">
+      {{ content.field_link }}
+    </div>
   </div>
 {% endblock paragraph %}

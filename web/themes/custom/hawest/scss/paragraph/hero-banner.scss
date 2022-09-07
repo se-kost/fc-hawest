@@ -1,0 +1,27 @@
+.paragraph--type--hero-banner {
+  .banner-wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    position: relative;
+
+    .banner-content {
+      max-width: 800px;
+      margin: 0 auto;
+      top: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+
+      color: white;
+      box-shadow: 0 0 50px 15px rgba(108, 180, 96, 0.4);
+      background: rgba(108, 180, 96, 0.4);
+      padding: 32px;
+
+      .banner-actions {
+        margin-top: 24px;
+      }
+    }
+  }
+}
